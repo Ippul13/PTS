@@ -775,11 +775,11 @@ https://templatemo.com/tm-593-personal-shape
         }
 
         .portfolio-item:nth-child(1) .portfolio-image {
-            background-image: url('images/4.jpg');
+            background-image: url('4.jpg');
         }
 
         .portfolio-item:nth-child(2) .portfolio-image {
-            background-image: url('images/5.jpg');
+            background-image: url('5.jpg');
         }
 
         .portfolio-item:nth-child(3) .portfolio-image {
@@ -1214,4 +1214,5 @@ https://templatemo.com/tm-593-personal-shape
             .container {
                 padding: 0 1rem;
             }
+
         }
