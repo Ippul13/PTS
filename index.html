@@ -1,306 +1,919 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PTS</title>
-    <link href="templatemo-personal-style.css" rel="stylesheet">
+    <title>CV. Permata Teknik Solution - General Supplier & Engineering</title>
+    <meta name="description"
+        content="Mitra terpercaya untuk General Supplier dan Engineering Service. Solusi pengadaan material dan teknik profesional dengan sistem manajemen terintegrasi.">
 
-<!--
+    <!-- Menggunakan Font yang sama dengan script DO -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
 
-TemplateMo 593 personal shape
+    <style>
+        /* ── VARIABEL (Sesuai Script DO Anda) ── */
+        :root {
+            --bg: #f4f1eb;
+            --surface: #ffffff;
+            --surface2: #faf8f4;
+            --border: #e0d9ce;
+            --accent: #2c5f2e;
+            /* Green Primary */
+            --accent-hover: #1e4620;
+            --accent-light: #e8f0e8;
+            --accent2: #c8860a;
+            /* Gold/Amber */
+            --text: #1a1a18;
+            --text-muted: #6b6860;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --max-width: 1200px;
+        }
 
-https://templatemo.com/tm-593-personal-shape
+        /* ── RESET & BASE ── */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
--->
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Fraunces', serif;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ── UTILITIES ── */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 14px rgba(44, 95, 46, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-light);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ── NAVBAR ── */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* --- Ganti/Update CSS ini --- */
+        .brand-logo {
+            width: 50px;
+            /* Ukuran diperbesar sedikit agar logo terlihat jelas */
+            height: 50px;
+
+            /* background: var(--accent);  <-- Nonaktifkan ini jika logo PNG transparan */
+            /* color: white;               <-- Nonaktifkan ini karena kita pakai gambar */
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            overflow: hidden;
+            /* Agar gambar tidak melengkung keluar */
+            flex-shrink: 0;
+        }
+
+        /* Tambahkan CSS baru ini untuk mengatur ukuran gambar di dalamnya */
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Agar logo proporsional dan tidak gepeng */
+        }
+
+        .brand-text h3 {
+            font-size: 18px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            /* Menggunakan Sans untuk logo text agar lebih jelas */
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .cta-mobile {
+            display: none;
+        }
+
+        /* ── HERO SECTION ── */
+        .hero {
+            padding: 100px 0 80px;
+            background: linear-gradient(to right, #f4f1eb 50%, #fff 50%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 12px;
+            background: var(--accent-light);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+
+        /* ── HERO IMAGE SLIDER STYLES ── */
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            /* Penting agar gambar tidak keluar dari kotak */
+            aspect-ratio: 4/3;
+            /* Menjaga rasio gambar tetap proporsional */
+            width: 100%;
+        }
+
+        /* Container Slider */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Setiap Slide Gambar */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            /* Default tersembunyi */
+            transition: opacity 1s ease-in-out;
+            /* Durasi transisi fade (1 detik) */
+        }
+
+        /* Class Active untuk gambar yang sedang muncul */
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Menambahkan overlay gelap agar teks lebih kontras jika ada di atas gambar */
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card Floating di atas Slider */
+        .hero-card {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid var(--border);
+            z-index: 10;
+            /* Agar selalu di atas gambar */
+        }
+
+        /* Floating Card Decoration */
+        .hero-card {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .hero-card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        /* ── SERVICES ── */
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            padding: 32px;
+            border-radius: var(--radius);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: var(--shadow);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--accent);
+            font-size: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* ── WHY US (Features) ── */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+        }
+
+        .feature-check {
+            min-width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        .feature-text h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+
+        .feature-text p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* ── CTA SECTION ── */
+        .cta-section {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin: 60px auto;
+            padding: 60px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 32px;
+            font-size: 18px;
+        }
+
+        .cta-btn {
+            background: var(--accent2);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #b07709;
+            transform: scale(1.05);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #111;
+            color: #999;
+            padding: 60px 0 30px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h4 {
+            color: white;
+            font-size: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent2);
+        }
+
+        .contact-info li {
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .features-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                background: var(--bg);
+                padding-top: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-card {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Simplified for mobile example */
+            .cta-mobile {
+                display: block;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <!-- script iklan -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5810072002632465"
-     crossorigin="anonymous"></script>
-<!-- pts -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5810072002632465"
-     data-ad-slot="7430392980"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-  	<!-- script iklan -->
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">CV. PERMATA TEKNIK SOLUTION</div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <!-- --- Ganti HTML ini --- -->
+            <a href="#" class="brand">
+                <div class="brand-logo">
+                    <!-- Logo menggunakan logo1.png, dengan fallback jika gambar error -->
+                    <img src="logo1.png" alt="Logo CV. Permata Teknik Solution"
+                        onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\'font-family: Fraunces; color:var(--accent); font-weight:700; font-size:20px\'>PTS</span>'">
+                </div>
+                <div class="brand-text">
+                    <h3>Permata Teknik</h3>
+                    <span>Solution</span>
+                </div>
+            </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" class="active">Beranda</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#contact">Kontak</a></li>
             </ul>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <div class="hamburger"></div>
-                <div class="hamburger"></div>
-                <div class="hamburger"></div>
-            </div>
+            <a href="#contact" class="btn btn-primary cta-desktop onclick="
+                window.open('http://wa.me/6285880912714','_blank')">Hubungi Kami</a>
+            <!-- <button class="btn btn-primary cta-desktop" onclick="window.open('http://wa.me/6285880912714', '_blank')">Hubungi Kami</button> -->
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <ul class="mobile-nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
+    <!-- HERO SECTION -->
+    <header id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Solusi Teknik & <span>General Supplier</span> Terpercaya</h1>
+                <p>Kami menyediakan layanan pengadaan material dan jasa teknik dengan sistem manajemen pengiriman yang
+                    profesional, akurat, dan terintegrasi.</p>
+                <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                    <a href="#services" class="btn btn-primary">Lihat Layanan</a>
+                    <a href="#contact" class="btn btn-secondary">Minta Penawaran</a>
+                </div>
+            </div>
+            <!-- GANTI BAGIAN INI: -->
+            <div class="hero-image">
+                <div class="slider">
+                    <!-- Slide 1 (Ganti src URL dengan gambar Anda, misal: 'img/foto1.jpg') -->
+                    <div class="slide active" style="background-image: url('blog2.jpg');"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-            <div class="shape shape-4"></div>
-            <div class="shape shape-5"></div>
-            <div class="shape shape-6"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-subtitle">Creative Designer</div>
-            <h1>Transforming Ideas Into Beautiful Experiences</h1>
-            <p class="subtitle">I craft digital experiences that captivate, engage, and inspire through thoughtful design and innovative solutions</p>
-            <a href="#portfolio" class="cta-button">Explore My Work</a>
-        </div>
-        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView()"></div>
-    </section>
+                    <!-- Slide 2 -->
+                    <div class="slide active" style="background-image: url('blog3.jpg');"></div>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+                    <!-- Slide 3 -->
+                    <div class="slide active" style="background-image: url('blog4.jpg');"></div>
+                    <div class="slide active" style="background-image: url('blog5.jpg');"></div>
+                    <div class="slide active" style="background-image: url('blog6.jpg');"></div>
+                </div>
+
+                <!-- Card Floating -->
+                <!--  <div class="hero-card">
+                <div class="hero-card-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div>
+                    <div style="font-weight: 700; color: var(--text);">Sistem Terintegrasi</div>
+                    <div style="font-size: 12px; color: var(--text-muted);">DO Digital & Tracking</div>
+                </div> -->
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-padding" style="background: white;">
         <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-content">
-                <div class="about-image slide-in-left"></div>
-                <div class="about-text slide-in-right">
-                    <h3>Passionate about creating meaningful digital experiences</h3>
-                    <p>CV PERMATA TEKNIK SOLUTION mengawali usahanya
-dengan lantar belakang sebuah bengkel Machining dan Fabrikasi
-berbentuk Bengkel Jaya. Pada awal usaha umumnya pekerjaan didapatkan
-dengan cara mensupport pembuatan mesin dan kontraktor mekanikal
-sebagai sub kontraktor (Sub-Con) pembuatan spare part dan berbagai
-peralatan pembuat mesin industri.</p>
-                    <p>Selain itu juga merintis usaha di
-bidang Informasi dan Teknologi (IT) serta sipil dan kontruksi.
-CV PERMATA TEKNIK SOLUTION bermaksud untuk memenuhi
-semua kebutuhan pada sektor industri baik berupa
-rekayasa teknik serta supplier barang teknik sesuai
-dengan permintaan dan kebutuhan pasar
-industri saat ini.
-</p>
-                    <p>When I'm not designing, you'll find me exploring new technologies, sketching ideas, or seeking inspiration in nature and architecture.</p>
-                    <div class="skills">
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Web Development</span>
-                        <span class="skill-tag">Brand Identity</span>
-                        <span class="skill-tag">Motion Graphics</span>
-                        <span class="skill-tag">Prototyping</span>
-                        <span class="skill-tag">Design Systems</span>
+            <div class="section-title">
+                <h2>Tentang CV. Permata Teknik Solution</h2>
+                <p>Mitra strategis Anda dalam kebutuhan industri dan konstruksi sejak awal berdiri.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-text">
+                    <p style="margin-bottom: 20px; font-size: 17px; color: var(--text-muted);">
+                        Berlokasi di Cibitung, Kabupaten Bekasi, CV. Permata Teknik Solution hadir sebagai jembatan
+                        antara kebutuhan teknis di lapangan dengan ketersediaan material yang berkualitas. Kami
+                        menggabungkan keahlian teknik dengan efisiensi rantai pasok (supply chain).
+                    </p>
+                    <p style="font-size: 17px; color: var(--text-muted);">
+                        Komitmen kami adalah memberikan layanan <strong>General Supplier and Engineering
+                            Service</strong> yang tidak hanya memenuhi standar kuantitas, tetapi juga ketepatan waktu
+                        dan administrasi yang transparan melalui sistem Delivery Order kami.
+                    </p>
+                </div>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text">
+                            <h4>Lokasi Strategis</h4>
+                            <p>Dekat kawasan industri Cibitung & Cikarang untuk akses cepat.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text">
+                            <h4>Tim Profesional</h4>
+                            <p>Didukung tenaga ahli teknik dan staff administrasi berpengalaman.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-check">✓</div>
+                        <div class="feature-text">
+                            <h4>Akurasi Data</h4>
+                            <p>Sistem pencatatan barang detail (Batch No, Exp Date, Status).</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section-padding services">
         <div class="container">
-            <h2 class="section-title fade-in">Our Clients</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Seolindo</h4>
-                        <p>Otomatisasi pada Mesin Potong Plastic & Otomatisasi pada Mesin Slitting.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Stripe</span>
-                        </div>
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Solusi komprehensif untuk mendukung kelancaran operasional bisnis Anda.</p>
+            </div>
+            <div class="service-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icon Box -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
                     </div>
+                    <h3>General Supplier</h3>
+                    <p>Pengadaan kebutuhan industri umum, alat teknik, material konstruksi, dan consumables dengan
+                        standar kualitas tinggi.</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Indo Mobil Suzuki</h4>
-                        <p>Instalasi pipa untuk cairan kimia Electroplanting Chorome.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Illustrator</span>
-                            <span class="tech-tag">Photoshop</span>
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">After Effects</span>
-                        </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icon Wrench -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
+                        </svg>
                     </div>
+                    <h3>Engineering Service</h3>
+                    <p>Layanan dukungan teknis, instalasi peralatan, maintenance ringan hingga menengah, dan konsultasi
+                        teknik.</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. CIBA Speciality Chemical Indonesia</h4>
-                        <p>Rekondisi Dosing System Machine.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">Principle</span>
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Lottie</span>
-                        </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icon Truck -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
                     </div>
+                    <h3>Manajemen Logistik</h3>
+                    <p>Pengiriman terjadwal dengan sistem DO digital yang transparan, tracking batch number, hingga
+                        tanda terima resmi.</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Kawasaki Motor Indonesia</h4>
-                        <p>Instalasi pipa Steam Trap 4 Line.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">D3.js</span>
-                            <span class="tech-tag">SCSS</span>
-                            <span class="tech-tag">Chart.js</span>
-                        </div>
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icon Box -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
                     </div>
+                    <h3>General Supplier</h3>
+                    <p>Pengadaan kebutuhan industri umum, alat teknik, material konstruksi, dan consumables dengan
+                        standar kualitas tinggi.</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Grace Specialty Chemicals Indonesia</h4>
-                        <p>Maintenance Piping OP & WBC.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Framer Motion</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Vercel</span>
-                        </div>
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icon Wrench -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
+                        </svg>
                     </div>
+                    <h3>Engineering Service</h3>
+                    <p>Layanan dukungan teknis, instalasi peralatan, maintenance ringan hingga menengah, dan konsultasi
+                        teknik.</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Polyprima</h4>
-                        <p>Instalasi Dosing System to WWTP.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">GSAP</span>
-                            <span class="tech-tag">WebGL</span>
-                        </div>
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <!-- Icon Truck -->
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
                     </div>
+                    <h3>Manajemen Logistik</h3>
+                    <p>Pengiriman terjadwal dengan sistem DO digital yang transparan, tracking batch number, hingga
+                        tanda terima resmi.</p>
                 </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Graha Alam Industri</h4>
-                        <p>Service dan Pengadaan Genset.</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">GSAP</span>
-                            <span class="tech-tag">WebGL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. LassaleFood</h4>
-                        <p>Fabrikasi Caping Confeyor Corner</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">GSAP</span>
-                            <span class="tech-tag">WebGL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image"></div>
-                    <div class="portfolio-content">
-                        <h4>PT. Danone Indonesia</h4>
-                        <p>Otomatisasi Mesin Pembalik Product untuk Conveyor</p>
-                        <div class="portfolio-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Three.js</span>
-                            <span class="tech-tag">GSAP</span>
-                            <span class="tech-tag">WebGL</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="contact-floating-shapes">
-            <div class="contact-shape contact-shape-1"></div>
-            <div class="contact-shape contact-shape-2"></div>
-            <div class="contact-shape contact-shape-3"></div>
-            <div class="contact-shape contact-shape-4"></div>
-            <div class="contact-shape contact-shape-5"></div>
-            <div class="contact-shape contact-shape-6"></div>
-        </div>
-        <div class="container">
-            <div class="contact-content">
-                <h2 class="section-title fade-in">Let's Work Together</h2>
-                <p class="fade-in">Ready to bring your vision to life? Let's discuss how we can create something amazing together. I'm always excited to take on new challenges and collaborate on innovative projects.</p>
-                <form class="contact-form fade-in">
-                  <!--
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your full name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-                  -->
-                    <a   href="https://wa.me/6282333270800" target="_blank" class="submit-btn">Send Message   </a>
-								<p class="fade-in">Perumahan Permata Nusa Indah cluster Emerald 21 / 01 Cibitung, Muktiwari, Kabupaten Bekasi, Jawa Barat, 17526.</p>											<div class="map-container"> 
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1983.1398582212291!2d107.10207504496695!3d-6.226803602188653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1759033845496!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-                </form>
+    <!-- CTA / CONTACT SECTION -->
+    <section id="contact" class="container" style="padding-bottom: 80px;">
+        <div class="cta-section">
+            <h2>Siap Meningkatkan Efisiensi Bisnis Anda?</h2>
+            <p>Hubungi kami sekarang untuk konsultasi kebutuhan material atau jasa teknik.</p>
+
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px;">
+                <div style="text-align: left;">
+                    <small style="display:block; opacity: 0.8; margin-bottom: 4px;">WhatsApp / Telepon</small>
+                    <strong style="font-size: 18px;">085 880 912 714</strong>
+                </div>
+                <div style="width: 1px; background: rgba(255,255,255,0.3);"></div>
+                <div style="text-align: left;">
+                    <small style="display:block; opacity: 0.8; margin-bottom: 4px;">Email</small>
+                    <strong style="font-size: 18px;">Permatatekniksolution@gmail.com</strong>
+                </div>
             </div>
+
+            <!-- Tombol ini bisa mengarah ke file form HTML Anda jika diupload -->
+            <!-- <button class="cta-btn" onclick="window.open('https://ippul13.github.io/pnwarn/', '_blank')">Buat Pesanan Sekarang</button> -->
+            <button class="cta-btn" onclick="window.open('http://wa.me/6285880912714', '_blank')">Buat Pesanan
+                Sekarang</button>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- FOOTER -->
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <p>&copy; 2025 Personal Shape. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>CV. Permata Teknik Solution</h4>
+                    <p style="margin-bottom: 16px; line-height: 1.8;">Mitra terpercaya Anda dalam General Supplier dan
+                        Engineering Service. Memberikan solusi terbaik dengan standar profesionalitas tinggi.</p>
                 </div>
-                <div class="footer-right">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Use</a>
-                    <a href="#sitemap">Sitemap</a>
-                    <a href="#https://templatemo.com" target="_blank" >Provided by TemplateMo</a>
+                <div class="footer-col">
+                    <h5>Tautan Cepat</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#contact">Hubungi Kami</a></li>
+                    </ul>
                 </div>
-                
+                <div class="footer-col">
+                    <h5>Kontak</h5>
+                    <ul class="contact-info">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Permata Nusa Indah Cluster Emerald No.01, RT005/RW013, Cibitung, Muktiwari, Kab.
+                                Bekasi</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                            <span>085 880 912 714</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>Permatatekniksolution@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 CV. Permata Teknik Solution. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-<script src="templatemo-personal-javascripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+
+            // Fungsi pindah slide
+            function showNextSlide() {
+                // Hapus kelas active dari slide sekarang
+                slides[currentSlide].classList.remove('active');
+
+                // Pindah ke slide berikutnya (kembali ke 0 jika sudah sampai akhir)
+                currentSlide = (currentSlide + 1) % totalSlides;
+
+                // Tambah kelas active ke slide baru
+                slides[currentSlide].classList.add('active');
+            }
+
+            // Jalankan otomatis setiap 4000 milidetik (4 detik)
+            setInterval(showNextSlide, 3000);
+        });
+    </script>
+
+
 </body>
+
 </html>
